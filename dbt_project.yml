@@ -24,5 +24,4 @@ models:
       materialized: table
       +schema: staging
       staging:
-        materialized: view
         materialized: table
