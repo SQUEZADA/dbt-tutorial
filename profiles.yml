@@ -3,7 +3,7 @@ jaffle_shop:
     dev:
       account: izyinso-gf41123
       database: RAW
-      password: @Debugger12
+      password: '@Debugger12'
       role: ACCOUNTADMIN
       schema: JAFFLE_SHOP
       threads: 4
