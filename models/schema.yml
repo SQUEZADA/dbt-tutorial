@@ -10,6 +10,10 @@ models:
         tests:
           - unique
           - not_null
+        meta:
+          metrics:
+            total_customer_count:
+              type: count_distinct
 
       - name: first_name
         description: Customer's first name. PII.
@@ -38,6 +42,10 @@ models:
           - unique
           - not_null
         description: This is a unique identifier for an order
+        meta:
+          metrics:
+            total_order_count:
+              type: count_distinct
 
       - name: customer_id
         description: Foreign key to the customers table
@@ -60,21 +68,37 @@ models:
         description: Total amount (AUD) of the order
         tests:
           - not_null
+        meta:
+          metrics:
+            total_amount_general:
+              type: sum
 
       - name: credit_card_amount
         description: Amount of the order (AUD) paid for by credit card
         tests:
           - not_null
+        meta:
+          metrics:
+            total_amount_by_creditcard:
+              type: sum
 
       - name: coupon_amount
         description: Amount of the order (AUD) paid for by coupon
         tests:
           - not_null
+        meta:
+          metrics:
+            total_amount_by_coupon:
+              type: sum
 
       - name: bank_transfer_amount
         description: Amount of the order (AUD) paid for by bank transfer
         tests:
           - not_null
+        meta:
+          metrics:
+            total_amount_by_transference:
+              type: sum
 
       - name: gift_card_amount
         description: Amount of the order (AUD) paid for by gift card
